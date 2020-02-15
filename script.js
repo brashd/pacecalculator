@@ -1,5 +1,5 @@
 const distanceInput = document.querySelector('input[name=distance]');
-let timeInputHH = document.querySelector('input[name=hh]');
+const timeInputHH = document.querySelector('input[name=hh]');
 const timeInputMM = document.querySelector('input[name=mm]');
 const timeInputSS = document.querySelector('input[name=ss]');
 const calcButton =  document.getElementById('calculate');
