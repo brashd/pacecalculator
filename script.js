@@ -1,18 +1,37 @@
+const distanceInput = document.querySelector('input[name=distance]');
+let timeInputHH = document.querySelector('input[name=hh]');
+const timeInputMM = document.querySelector('input[name=mm]');
+const timeInputSS = document.querySelector('input[name=ss]');
+const calcButton =  document.getElementById('calculate');
+
 function paceCalc (e){
-    e.preventDefault()
+ e.preventDefault();
+   
+      
+const km = parseFloat(distanceInput.value);
+ const hours = parseFloat(timeInputHH.value);
+ const minutes = parseFloat(timeInputMM.value);
+ const secs = parseFloat(timeInputSS.value);
 
-let distanceInput = document.querySelector('input[name=distance]').value
- 
-let timeInput = document.querySelector('input[name=time]').value
- 
- 
-let pace = parseFloat(timeInput) / parseFloat(distanceInput)
-    pace = pace.toFixed(2)
+const totalMinutes = (hours * 60) + minutes + (secs/60);
+const pace = totalMinutes/ km;
+const paceMinutes = Math.floor(pace) ;
+let paceSeconds = Math.round((pace - paceMinutes)*60);
 
-// if (!isNaN(pace))
-// {
-    document.getElementById('pace').innerHTML=`Your pace is ${pace} min/km`
-// }
+if (paceSeconds < 10) {
+    paceSeconds = "0"+paceSeconds
 }
 
-document.getElementById('calculate').addEventListener('click', paceCalc)
+
+document.getElementById('pace').innerHTML = `Dein Pace ist ${paceMinutes}:${paceSeconds} min/km`;
+ 
+}
+
+      
+  function resetForm (){
+    document.getElementById('calc-inputs').reset()
+  }
+
+
+calcButton.addEventListener('click', paceCalc)
+document.getElementById('reset').addEventListener('click', resetForm)

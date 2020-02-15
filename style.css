@@ -5,4 +5,47 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: 'Lato', sans-serif;
+}
 
+ 
+.container  { 
+    text-align: center;
+}
+
+.contents {
+    margin-top: 40px;
+    display: inline-block;
+    border: 1px solid black;
+    width: 600px;
+}
+
+.form-inputs {
+    margin-top: 1.5rem;
+}
+
+.time-inputs {
+    margin-top: 10px;
+}
+
+.distance-inputs {
+    margin-top: 10px;
+}
+
+#pace {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#calculate {
+    margin-top: 20px;
+}
+
+.time {
+    width: 100px;
+}
+
+.distance {
+    width: 100px;
+}
